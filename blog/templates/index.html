@@ -26,41 +26,22 @@
 <div class="container page-body">
     <div class="col-md-9" role="main">
         <div class="body-main">
-            <div>
-                <h2>Article Title 1</h2>
-                <p>Article Content Article Content Article Content Article Content Article Content Article Content
-                    Article Content Article Content Article Content Article Content Article Content Article Content
-                    Article Content Article Content Article Content Article Content Article Content Article Content
-                    Article Content Article Content Article Content Article Content Article Content Article Content
-                    Article Content Article Content Article Content Article Content Article Content Article Content
-                    Article Content Article Content Article Content Article Content
-                </p>
-            </div>
-            <div>
-                <h2>Article Title 2</h2>
-                <p>Article Content Article Content Article Content Article Content Article Content Article Content
-                    Article Content Article Content Article Content Article Content Article Content Article Content
-                    Article Content Article Content Article Content Article Content Article Content Article Content
-                    Article Content Article Content Article Content Article Content Article Content Article Content
-                    Article Content Article Content Article Content Article Content Article Content Article Content
-                    Article Content Article Content Article Content Article Content
-                </p>
-            </div>
+            {% for article in article_list %}
+                <div>
+                    <h2>{{ article.title }}</h2>
+                    <p>
+                        {{ article.brief_content }}
+                    </p>
+                </div>
+            {% endfor %}
         </div>
     </div>
     <div class="col-md-3" role="complementary">
         <div>
             <h2>Latest Articles</h2>
-            <h4><a href="#">Latest Article 1</a></h4>
-            <h4><a href="#">Latest Article 2</a></h4>
-            <h4><a href="#">Latest Article 3</a></h4>
-            <h4><a href="#">Latest Article 4</a></h4>
-            <h4><a href="#">Latest Article 5</a></h4>
-            <h4><a href="#">Latest Article 6</a></h4>
-            <h4><a href="#">Latest Article 7</a></h4>
-            <h4><a href="#">Latest Article 8</a></h4>
-            <h4><a href="#">Latest Article 9</a></h4>
-            <h4><a href="#">Latest Article 10</a></h4>
+            {% for article in article_list %}
+                <h4><a href="#">{{ article.title }}</a></h4>
+            {% endfor %}
         </div>
     </div>
 </div>

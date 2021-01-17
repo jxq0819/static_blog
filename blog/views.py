@@ -1,4 +1,5 @@
 from django.http import HttpResponse
+from django.shortcuts import render
 
 from .models import Article
 
@@ -18,3 +19,8 @@ def article_content(request):
         title, brief_content, content, article_id, publish_date)
 
     return HttpResponse(return_str)
+
+
+def get_index_page(request):
+    all_articles = Article.objects.all()
+    return render(request, 'index.html', {'article_list': all_articles})
