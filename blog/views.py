@@ -24,3 +24,9 @@ def article_content(request):
 def get_index_page(request):
     all_articles = Article.objects.all()
     return render(request, 'index.html', {'article_list': all_articles})
+
+
+def get_detail_page(request):
+    curr_article = Article.objects.all()[0]
+    section_list = curr_article.content.split('\n')
+    return render(request, 'detail.html', {'curr_article': curr_article, 'section_list': section_list})
