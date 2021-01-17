@@ -1,3 +1,3 @@
 # Static Blog Website
 
-The static blog was built with [Django](https://www.djangoproject.com/).
+The static blog was built with [Django](https://www.djangoproject.com/) and [Bootstrap](https://getbootstrap.com/).
