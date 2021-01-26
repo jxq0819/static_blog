@@ -4,6 +4,10 @@ The blog website was built with [Django](https://www.djangoproject.com/) and [Bo
 
 This blog has a home page and article detail pages. A specific page can be directed with the paginator at bottom. Each article detail can be accessed via the hyperlink of the article title.
 
-#### Blog home page
+#### Blog home page (http://localhost:8000/blog/index)
 
-#### Article detail page
+![image](https://github.com/jxq0819/static_blog/blob/master/images/index.png)
+
+#### Article detail page (http://localhost:8000/blog/detail/6)
+
+![image](https://github.com/jxq0819/static_blog/blob/master/images/detail.png)
