@@ -30,6 +30,7 @@ def get_index_page(request):
         page = 1
     print('page param:', page)
     all_articles = Article.objects.all()
+    latest10_article_list = Article.objects.order_by('-publish_date')[:10]
 
     paginator = Paginator(all_articles, 6)
     page_num = paginator.num_pages
@@ -46,7 +47,8 @@ def get_index_page(request):
 
     return render(request, 'index.html',
                   {'article_list': page_article_list, 'page_num': range(1, page_num + 1), 'curr_page': page,
-                   'next_page': next_page, 'previous_page': previous_page})
+                   'next_page': next_page, 'previous_page': previous_page,
+                   'latest10_article_list': latest10_article_list})
 
 
 def get_detail_page(request, article_id):
